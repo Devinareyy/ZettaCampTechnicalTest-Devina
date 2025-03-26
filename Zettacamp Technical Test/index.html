@@ -16,7 +16,7 @@
 
     <div class="wrap">
       <div class="cardContainer">
-        <div class="pricingCard">
+        <div class="pricingCard" onclick="selectCard(this)">
           <div class="cardHeader"><strong>BASIC</strong></div>
           <div class="cardPrice">
             <div class="price"><strong>$4</strong></div>
@@ -29,12 +29,14 @@
               <li>100 Mb Disk Space</li>
             </ul>
           </div>
-          <button class="btn"><strong>BUY NOW</strong></button>
+          <button class="btn" onclick="buyNow(event)">
+            <strong>BUY NOW</strong>
+          </button>
         </div>
       </div>
 
       <div class="cardContainer">
-        <div class="pricingCard">
+        <div class="pricingCard" onclick="selectCard(this)">
           <div class="cardHeader">
             <strong>STANDARD</strong> <span>Save 15%</span>
           </div>
@@ -49,12 +51,14 @@
               <li>200 Mb Disk Space</li>
             </ul>
           </div>
-          <button class="btn"><strong>BUY NOW</strong></button>
+          <button class="btn" onclick="buyNow(event)">
+            <strong>BUY NOW</strong>
+          </button>
         </div>
       </div>
 
       <div class="cardContainer">
-        <div class="pricingCard">
+        <div class="pricingCard" onclick="selectCard(this)">
           <div class="cardHeader"><strong>ADVANCED</strong></div>
           <div class="cardPrice">
             <div class="price"><strong>$12</strong></div>
@@ -67,7 +71,9 @@
               <li>500 Mb Disk Space</li>
             </ul>
           </div>
-          <button class="btn"><strong>BUY NOW</strong></button>
+          <button class="btn" onclick="buyNow(event)">
+            <strong>BUY NOW</strong>
+          </button>
         </div>
       </div>
     </div>
@@ -85,5 +91,18 @@
         </tr>
       </table>
     </div>
+
+    <script>
+      function buyNow(event) {
+        event.stopPropagation();
+        alert("Purchase Success!");
+      }
+
+      function selectCard(pricingCard) {
+        let cards = document.querySelectorAll(".pricingCard");
+        cards.forEach((c) => c.classList.remove("selected"));
+        pricingCard.classList.add("selected");
+      }
+    </script>
   </body>
 </html>

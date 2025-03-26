@@ -37,6 +37,13 @@ h1 {
 .pricingCard {
   width: 250px;
   box-shadow: 0 5px 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.pricingCard:hover {
+  transform: scale(1.1);
+  box-shadow: 0 7px 7px;
 }
 
 .cardHeader {
@@ -66,6 +73,7 @@ h1 {
   border-radius: 5px;
   margin: 20px;
   border: none;
+  cursor: pointer;
 }
 
 .price {
@@ -90,4 +98,8 @@ table {
   text-align: left;
   padding: 20px;
   gap: 20px;
+}
+
+.selected {
+  border: 2px solid #039ae4;
 }
